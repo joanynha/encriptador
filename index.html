@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" type="image/x-icon" href="assets/chave.svg">
+    <script defer src="js/script.js"></script>
+    <title>encrypt</title>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h1>encriptador</h1>
+
+            <form action="#">
+
+                <textarea name="mensagem" id="mensagem" cols="50" rows="4" placeholder="digite a mensagem aqui"></textarea>
+                <label id="selecione" for="select"></label>
+                <select name="select" class="select" id="select">
+                    <option value="base64">base64</option>
+                    <option value="cifra">cifra de césar</option>
+                </select>
+
+                <div class="chave-container">
+                    <label class="chave" for="range">escolha o incremento</label>
+                    <div class="slider-range">
+                        <input type="range" value="1" min="1" max="26" class="range" id="range"
+                            oninput="rangenumber.value=value" />
+                        <input type="number" value="1" id="rangenumber" min="1" max="26" oninput="range.value=value" />
+                    </div>
+                </div>
+
+                <div class="radio-button">
+                    <div class="radio">
+                        <input type="radio" name="codificar" id="codificar" value="codificar" checked />
+                        <label for="codificar">encriptar</label>
+                    </div>
+
+                    <div class="radio">
+                        <input type="radio" name="codificar" id="decodificar" value="decodificar" />
+                        <label for="decodificar">desencriptar</label>
+                    </div>
+                </div>
+
+                <div class="btn">
+                    <button>encriptar</button>
+                </div>
+
+                <textarea id="resultado" class="mensagem resultado" cols="50" rows="4" readonly
+                    placeholder="a mensagem criptografada sairá aqui"></textarea>
+
+            </form>
+        </div>
+    </main>
+</body>
+</html>
